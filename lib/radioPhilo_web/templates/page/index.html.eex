@@ -1,17 +1,24 @@
-<h2>
-    Radio Philo Quotation
-</h2>
-<div id="chat-box">
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Radio Philo
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div id="chat-box" class="box">
     <%= for message <- @messages do %>
-        <p>
-            <b><%= message.name %>:</b>
-            <%= message.body %>
-        </p>
+        <article class="message <%= @qTypeMap[message.name] %>">
+            <div class="message-header">
+                <b><%= message.name %>:</b>
+            </div>
+            <div class="message-body">
+                <p>
+                    <%= message.body %>
+                </p>
+            </div>
+        </article>
     <% end %>
 </div>
-
-<form id="chat-form">
-    <%= select(:quotation, :type, ["CITATION": 1, "VIEWER": 2]) %>
-    <%= textarea(:quotation, :content) %>
-    <button type="submit">Post</button>
-</form>

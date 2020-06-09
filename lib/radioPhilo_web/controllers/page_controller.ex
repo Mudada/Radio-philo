@@ -5,6 +5,7 @@ defmodule RadioPhiloWeb.PageController do
 
   def index(conn, _params) do
     messages = Chats.list_quotations |> Enum.reverse
-    render(conn, "index.html", messages: messages)
+    qTypeMap = %{"citation" => "is-dark", "viewer" => "is-info"}
+    render(conn, "index.html", messages: messages, qTypeMap: qTypeMap)
   end
 end
