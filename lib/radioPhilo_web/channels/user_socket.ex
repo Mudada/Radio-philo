@@ -2,7 +2,8 @@ defmodule RadioPhiloWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", RadioPhiloWeb.RoomChannel
+
+  channel "quotation:*", RadioPhiloWeb.QuotationChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
@@ -15,6 +16,7 @@ defmodule RadioPhiloWeb.UserSocket do
   #
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
+
   @impl true
   def connect(_params, socket, _connect_info) do
     {:ok, socket}
