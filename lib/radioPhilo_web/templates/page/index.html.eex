@@ -10,9 +10,10 @@
 
 <div id="chat-box" class="box">
     <%= for message <- @messages do %>
-        <article class="message <%= @qTypeMap[message.name] %>">
+        <article class="message <%= @qTypeMap[message.label] %>">
             <div class="message-header">
-                <b><%= message.name %>:</b>
+                <b><%= message.userName %> | <%= message.label %>:</b>
+                <button class="delete" aria-label="delete"></button>
             </div>
             <div class="message-body">
                 <p>

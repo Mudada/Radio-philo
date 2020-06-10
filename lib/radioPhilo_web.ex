@@ -65,6 +65,7 @@ defmodule RadioPhiloWeb do
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
+      import Phoenix.LiveView.Helpers
 
       import RadioPhiloWeb.ErrorHelpers
       import RadioPhiloWeb.Gettext

@@ -4,7 +4,8 @@ defmodule RadioPhilo.Chats.Quotation do
 
   schema "quotations" do
     field :body, :string
-    field :name, :string
+    field :userName, :string
+    field :label, :string
 
     timestamps()
   end
@@ -12,7 +13,7 @@ defmodule RadioPhilo.Chats.Quotation do
   @doc false
   def changeset(quotation, attrs) do
     quotation
-    |> cast(attrs, [:name, :body])
-    |> validate_required([:name, :body])
+    |> cast(attrs, [:label, :userName, :body])
+    |> validate_required([:label, :userName, :body])
   end
 end

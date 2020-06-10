@@ -16,16 +16,18 @@
               <div class="columns">
                   <div class="column">
                       <div class="box">
+                          <%= if assigns[:userName] do %>
                           <form id="chat-form">
                               <label class="label"> Label </label>
                               <%= select :quotation, :type, ["CITATION": "citation", "VIEWER": "viewer"], class: "select" %>
-
+                              <input value=<%= @userName %> id="userName" hidden>
                               <label class="label"> Content </label>
                               <%= textarea :quotation, :content, class: "textarea" %>
                               <div class="control">
                                   <%= submit "Post", class: "button" %>
                               </div>
                           </form>
+                          <% end %>
                       </div>
                   </div>
                   <div class="column is-four-fifths">

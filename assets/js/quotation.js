@@ -1,6 +1,6 @@
 const htmlQuotation = (payload) => `
             <div class="message-header">
-                <b>${payload.name} :</b>
+                <b>${payload.userName} | ${payload.label} :</b>
             </div>
             <div class="message-body">
                 <p>
@@ -23,10 +23,11 @@ const Quotation = {
             e.preventDefault()
 
             const qType = document.getElementById("quotation_type").value
+            const userName = document.getElementById("userName").value
             const qContent = document.getElementById("quotation_content").value
 
-            console.log(`${qType}: ${qContent}`)
-            channel.push("shout", {name: qType, body: qContent})
+            console.log(`${userName}: ${qType}: ${qContent}`)
+            channel.push("shout", {userName: userName, body: qContent, label: qType})
 
             document.getElementById("quotation_type").value = qType
             document.getElementById("quotation_content").value = ""
