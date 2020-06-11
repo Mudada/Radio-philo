@@ -12,8 +12,8 @@
     <%= for message <- @messages do %>
         <article class="message <%= @qTypeMap[message.label] %>">
             <div class="message-header">
-                <b><%= message.userName %> | <%= message.label %>:</b>
-                <button class="delete" aria-label="delete"></button>
+                <b><%= message.userName %> | <%= message.label %></b>
+                <button class="delete" aria-label="delete" id="delete-<%= message.id %>" value="<%= message.id %>"></button>
             </div>
             <div class="message-body">
                 <p>

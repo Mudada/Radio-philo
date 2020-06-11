@@ -19,7 +19,8 @@
                           <%= if assigns[:userName] do %>
                           <form id="chat-form">
                               <label class="label"> Label </label>
-                              <%= select :quotation, :type, ["CITATION": "citation", "VIEWER": "viewer"], class: "select" %>
+                              <%= select :quotation, :type,
+                              ["CITATION": "citation", "VIEWER": "viewer", "QUESTION": "question", "INCOMPREHENSION": "misunderstanding"], class: "select" %>
                               <input value=<%= @userName %> id="userName" hidden>
                               <label class="label"> Content </label>
                               <%= textarea :quotation, :content, class: "textarea" %>
